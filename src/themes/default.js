@@ -24,6 +24,7 @@ export const GlobalStyles = () => {
         body {
           background-color: ${theme.colors.background};
           font-family: ${theme.fonts.roboto};
+          color: ${theme.colors.white};
         }
       `}
     />

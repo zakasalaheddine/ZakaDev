@@ -5,10 +5,10 @@ import { StyledButton } from "../components/styled-components/Button";
 
 export default function Home() {
   return (
-    <div>
+    <div className="px-2">
       <Tag>{"<body>"}</Tag>
-      <div className="flex justify-around">
-        <div className="self-center w-7/12 ml-10">
+      <div className="flex justify-around align-center">
+        <div className="self-center lg:w-7/12 ml-10 mt-4">
           <Title
             titles={[
               "Hi, my name is",
@@ -24,7 +24,7 @@ export default function Home() {
             CONTACT ME
           </StyledButton>
         </div>
-        <div>
+        <div className="invisible lg:visible">
           <img src="/assets/illustration.png" alt="" />
         </div>
       </div>

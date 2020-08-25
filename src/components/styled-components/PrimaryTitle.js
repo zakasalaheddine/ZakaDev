@@ -14,7 +14,7 @@ export const PrimaryTitle = styled.h1`
     color: ${(props) => props.theme.colors.dark};
     font-size: 18px;
     position: absolute;
-    margin-top: -10px;
+    margin-top: -12px;
     margin-left: -20px;
   }
   &::after {

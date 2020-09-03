@@ -7,11 +7,11 @@ export default function Navbar() {
         <img src="/assets/logo.svg" />
       </div>
       <nav className="flex self-center">
-        <NavbarItem text="Home />" active/>
-        <NavbarItem text="About />" />
-        <NavbarItem text="Projects />" />
-        <NavbarItem text="Blog />" />
-        <NavbarItem text="HowTo />" />
+        <NavbarItem text="Home />" active href="/" />
+        <NavbarItem text="About />" href="/about" />
+        <NavbarItem text="Projects />" href="/" />
+        <NavbarItem text="Blog />" href="/" />
+        <NavbarItem text="HowTo />" href="/" />
       </nav>
     </header >
   )

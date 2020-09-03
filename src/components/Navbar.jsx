@@ -1,17 +1,28 @@
 import NavbarItem from "./NavbarItem";
+import { useRouter } from 'next/router'
+import { route } from "next/dist/next-server/server/router";
+
+const Menu = [
+  { text: "Home />", path: "/" },
+  { text: "About />", path: "/about" },
+  { text: "Projects />", path: "/" },
+  { text: "Blog />", path: "/" },
+  { text: "HowTo />", path: "/" },
+]
 
 export default function Navbar() {
+  const router = useRouter();
   return (
     <header className="container mx-auto flex flex-col justify-center lg:justify-between lg:flex-row py-2">
       <div className="self-center">
         <img src="/assets/logo.svg" />
       </div>
       <nav className="flex self-center">
-        <NavbarItem text="Home />" active href="/" />
-        <NavbarItem text="About />" href="/about" />
-        <NavbarItem text="Projects />" href="/" />
-        <NavbarItem text="Blog />" href="/" />
-        <NavbarItem text="HowTo />" href="/" />
+        {
+          Menu.map((item, idx) => (
+            <NavbarItem key={idx} text={item.text} active={router.asPath === item.path} href={item.path} />
+          ))
+        }
       </nav>
     </header >
   )

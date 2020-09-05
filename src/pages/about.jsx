@@ -116,7 +116,7 @@ export default function AboutPage({aboutInfos}) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${process.env.API_URL}/about-page`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/about-page`)
   const aboutInfos = await res.json()
   return {
     props: {

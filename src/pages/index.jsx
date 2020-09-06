@@ -15,9 +15,9 @@ export default function Home({ homeInfo }) {
             primaryIndex={1}
           />
           <br />
-          <SecondaryTitle>{description}</SecondaryTitle>
+          <SecondaryTitle initial={{ opacity: 0 }} animate={{ opacity: 1 }}>{description}</SecondaryTitle>
           <br />
-          <StyledButton className="border-2 py-4 px-5 rounded">
+          <StyledButton className="border-2 py-3 px-6">
             {buttonText}
           </StyledButton>
         </div>

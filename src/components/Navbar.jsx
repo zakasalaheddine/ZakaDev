@@ -1,13 +1,10 @@
 import NavbarItem from "./NavbarItem";
 import { useRouter } from 'next/router'
-import { route } from "next/dist/next-server/server/router";
 
 const Menu = [
   { text: "Home />", path: "/" },
   { text: "About />", path: "/about" },
   { text: "Projects />", path: "/projects" },
-  { text: "Blog />", path: "/" },
-  { text: "HowTo />", path: "/" },
 ]
 
 export default function Navbar() {

@@ -30,7 +30,7 @@ export default function Home({ homeInfo }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${process.env.API_URL}/home-page-info`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/home-page-info`)
   const homeInfo = await res.json()
   return {
     props: {

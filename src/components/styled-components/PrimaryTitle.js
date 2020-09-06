@@ -30,7 +30,34 @@ export const PrimaryTitle = styled.h1`
 
 
 export const SecondaryTitle = styled.h2`
+
   font-family: ${(props) => props.theme.fonts.roboto};
   color: ${(props) => props.theme.colors.secondary};
   font-weight: 500;
 `
+
+export const PageTitle = styled.h1`
+  font-family: ${(props) => props.theme.fonts.roboto};
+  color: ${(props) => props.theme.colors.white};
+  font-weight: 900;
+  position: relative;
+  &::before {
+    content: "<h1>";
+    font-family: ${(props) => props.theme.fonts.laBelleAurore};
+    color: ${(props) => props.theme.colors.dark};
+    font-size: 18px;
+    position: absolute;
+    margin-left: -30px;
+  }
+  &::after {
+    content: "<h1/>";
+    font-family: ${(props) => props.theme.fonts.laBelleAurore};
+    color: ${(props) => props.theme.colors.dark};
+    font-size: 18px;
+    position: absolute;
+    margin-left: 15px;
+    bottom: 0;
+  }
+`
+
+

@@ -26,3 +26,11 @@ export const line = {
     opacity: 1,
   },
 };
+
+export const rubberBand = {
+  scaleX: [1, 1.25, 0.75, 1.15, 0.95, 1.05, 1],
+  scaleY: [1, 0.75, 1.25, 0.85, 1.05, 0.95, 1],
+  transition: {
+    duration: 0.8,
+  },
+};

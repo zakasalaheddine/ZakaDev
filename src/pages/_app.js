@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import LoadingPage from "../components/LoadingPage";
 import DefaultSEO from "../components/DefaultSEO";
+import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps, router: propRouter }) {
   const [loading, setLoading] = useState(false);
@@ -46,6 +47,7 @@ function MyApp({ Component, pageProps, router: propRouter }) {
           )}
         </AnimatePresence>
       </main>
+      <Footer />
     </ThemeProvider>
   );
 }

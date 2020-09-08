@@ -1,10 +1,11 @@
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 
 export const CodeEditor = styled.div`
   margin: 10px 20px;
 `;
 
-export const Line = styled.div`
+export const Line = styled(motion.div)`
   position: relative;
   padding-left: 20px;
   &::before {

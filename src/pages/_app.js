@@ -6,9 +6,10 @@ import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import LoadingPage from "../components/LoadingPage";
+import DefaultSEO from "../components/DefaultSEO";
 
 function MyApp({ Component, pageProps, router: propRouter }) {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -36,6 +37,7 @@ function MyApp({ Component, pageProps, router: propRouter }) {
       <GlobalStyles />
       <Navbar />
       <main className="container mx-auto">
+        <DefaultSEO />
         <AnimatePresence exitBeforeEnter>
           {loading ? (
             <LoadingPage />

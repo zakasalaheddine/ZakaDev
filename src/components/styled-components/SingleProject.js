@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 
-export const AboutSection = styled.div`
+export const AboutSection = styled(motion.div)`
   position: relative;
   h2 {
     font-size: 1.3rem;

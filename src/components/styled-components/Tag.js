@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 
-export const Tag = styled.span`
+export const Tag = styled(motion.span)`
   font-size: 18px;
   display: block;
   font-family: ${(props) => props.theme.fonts.laBelleAurore};

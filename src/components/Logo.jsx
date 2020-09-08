@@ -19,7 +19,7 @@ const item = {
     opacity: 0
   },
   animate: {
-    opacity: 1
+    opacity: [1, 0, 1]
   }
 }
 export default function Logo({ className, width = 83, height = 51 }) {

@@ -15,7 +15,7 @@ export const PrimaryTitle = styled(motion.h1)`
     color: ${(props) => props.theme.colors.dark};
     font-size: 18px;
     position: absolute;
-    margin-top: -12px;
+    margin-top: -20px;
     margin-left: -20px;
   }
   &::after {
@@ -35,7 +35,7 @@ export const SecondaryTitle = styled(motion.h2)`
   font-weight: 300;
 `;
 
-export const PageTitle = styled.h1`
+export const PageTitle = styled(motion.h1)`
   font-family: ${(props) => props.theme.fonts.roboto};
   color: ${(props) => props.theme.colors.white};
   font-weight: 900;

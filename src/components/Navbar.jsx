@@ -15,7 +15,7 @@ export default function Navbar() {
       <div className="self-center">
         <Logo />
       </div>
-      <nav className="flex self-center">
+      <nav className="flex self-center pt-5 md:pt-2">
         {
           Menu.map((item, idx) => (
             <NavbarItem key={idx} text={item.text} active={router.asPath === item.path} href={item.path} />

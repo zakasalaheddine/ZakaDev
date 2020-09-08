@@ -3,108 +3,109 @@ import { Line, PropName, Method, CodeEditor, Dots, Scope, Prop, String } from ".
 import { renderDots, zeroPad } from "../utils/functions";
 import { motion } from "framer-motion";
 import { useTheme } from "emotion-theming";
+import { NextSeo } from "next-seo";
+import { PageTransition, line } from "../components/MotionAnimations";
 
 export default function AboutPage({aboutInfos}) {
   const {name, birthday, email, workExperience, educations, skills} = aboutInfos
   const theme = useTheme();
-  const pageTransition = {
-    initial: {
-      opacity: 0,
-    },
-    animate: {
-      opacity: 1,
-    },
-    exit: {
-      background: theme.colors.white,
-      filter: `invert()`,
-      opacity: 0,
-    },
-  };
   return (
-    <motion.div className="px-2" variants={pageTransition} initial="initial" animate="animate" exit="exit">
-      <Tag>{"<body>"}</Tag>
-      <Tag className="pl-3">{"<code>"}</Tag>
+    <>
+    <NextSeo
+        title="ABOUT ZAKA SALAH EDDINE | ZAKADEV"
+        description="Zaka Salah Eddine Portfolio"
+        canonical="https://www.zakadev.com/about"
+        openGraph={{
+          url: 'ttps://www.zakadev.com/',
+          title: 'ZAKA SALAH EDDINE | ZAKADEV',
+          description: "Zaka Salah Eddine Portfolio",
+          site_name: 'ZAKADEV'
+        }}
+      />
+    <motion.div className="px-2" variants={PageTransition} initial="initial" animate="animate" exit="exit">
+      <Tag variants={line}>{"<body>"}</Tag>
+      <Tag className="pl-3" variants={line}>{"<code>"}</Tag>
       <CodeEditor className="text-sm sm:text-base md:text-lg">
-        <Line number="01">
+        <Line number="01" variants={line}>
           <Method>class</Method> <PropName>{name}</PropName> {'{'}
         </Line>
-        <Line number="02">
+        <Line number="02" variants={line}>
           <Dots>{renderDots(2)}</Dots>
           <Method>constructor</Method>{'() {'}
         </Line>
-        <Line number="03">
+        <Line number="03" variants={line}>
           <Dots>{renderDots(4)}</Dots>
           <Scope>this</Scope>.<Prop>name</Prop> <Scope>=</Scope> <String>'{name}'</String>
         </Line>
-        <Line number="04">
+        <Line number="04" variants={line}>
           <Dots>{renderDots(4)}</Dots>
           <Scope>this</Scope>.<Prop>email</Prop> <Scope>=</Scope> <String>'{email}'</String>
         </Line>
-        <Line number="05">
+        <Line number="05" variants={line}>
           <Dots>{renderDots(4)}</Dots>
           <Scope>this</Scope>.<Prop>birthday</Prop> <Scope>=</Scope> <String>'{birthday}'</String>
         </Line>
-        <Line number="05">
+        <Line number="05" variants={line}>
           <Dots>{renderDots(2)}</Dots>
           {'}'}
         </Line>
-        <Line number="06">
+        <Line number="06" variants={line}>
           <Dots>{renderDots(2)}</Dots>
           <PropName>workExperience</PropName>{'() {'}
         </Line>
-        <Line number="07">
+        <Line number="07" variants={line}>
           <Dots>{renderDots(4)}</Dots>
           <Method>return </Method>{'['}
         </Line>
         {
           workExperience.map(({ Years, Experience }, idx) => (
-            <Line number={zeroPad(8 + idx)} key={idx}>
+            <Line number={zeroPad(8 + idx)} key={idx} variants={line}>
               <Dots>{renderDots(6)}</Dots>
               {'{ '}<String>'{Years}'</String> : <String>'{Experience}'</String>{' },'}
             </Line>
           ))
         }
-        <Line number="13">
+        <Line number="13" variants={line}>
           <Dots>{renderDots(4)}</Dots>
           {']'}
         </Line>
-        <Line number="14">
+        <Line number="14" variants={line}>
           <Dots>{renderDots(2)}</Dots>
           {'}'}
         </Line>
-        <Line number="15">
+        <Line number="15" variants={line}>
           <Dots>{renderDots(2)}</Dots>
           <PropName>educations</PropName>{'() {'}
         </Line>
-        <Line number="16">
+        <Line number="16" variants={line}>
           <Dots>{renderDots(4)}</Dots>
           <Method>return </Method>{'['}
         </Line>
         {
           educations.map(({ Years, education }, idx) => (
-            <Line number={zeroPad(17 + idx)} key={idx}>
+            <Line number={zeroPad(17 + idx)} key={idx} variants={line}>
               <Dots>{renderDots(6)}</Dots>
               {'{ '}<String>'{Years}'</String> : <String>'{education}'</String>{' },'}
             </Line>
           ))
         }
-        <Line number="20">
+        <Line number="20" variants={line}>
           <Dots>{renderDots(4)}</Dots>
           {']'}
         </Line>
-        <Line number="21">
+        <Line number="21" variants={line}>
           <Dots>{renderDots(2)}</Dots>
           {'}'}
         </Line>
-        <Line number="22">
+        <Line number="22" variants={line}>
           <Dots>{renderDots(2)}</Dots>
           <PropName>skills</PropName>{'() {'}
         </Line>
-        <Line number="23">
+        <Line number="23" variants={line}>
           <Dots>{renderDots(4)}</Dots>
           <Method>return </Method>{'['}
         </Line>
-        <Line number="24">
+        <Line number="24" variants={line}>
           <Dots>{renderDots(6)}</Dots>
           {
             skills.map(({id, skill}) => (
@@ -112,22 +113,22 @@ export default function AboutPage({aboutInfos}) {
             ))
           }
         </Line>
-        <Line number="25">
+        <Line number="25" variants={line}>
           <Dots>{renderDots(4)}</Dots>
           {']'}
         </Line>
-        <Line number="26">
+        <Line number="26" variants={line}>
           <Dots>{renderDots(2)}</Dots>
           {'}'}
         </Line>
-        <Line number="27">
+        <Line number="27" variants={line}>
           {'}'}
         </Line>
-      </CodeEditor>
-      
-      <Tag className="pl-3">{"</code>"}</Tag>
-      <Tag>{"</body>"}</Tag>
+      </CodeEditor>      
+      <Tag className="pl-3" variants={line}>{"</code>"}</Tag>
+      <Tag variants={line}>{"</body>"}</Tag>
     </motion.div>
+    </>
   )
 }
 

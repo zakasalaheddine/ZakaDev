@@ -21,11 +21,11 @@ export default function Title({ titles, primaryIndex }) {
         }
       }}
       className="text-xl md:text-3xl lg:text-5xl">
-      {titles.map(({ title, isPrimary }) => (
-        <>
+      {titles.map(({ title, isPrimary }, idx) => (
+        <React.Fragment key={idx}>
           {title.split('').map((char, idy) => char !== ' ' ? <AnimatedLetter key={idy} isPrimary={isPrimary} char={char} /> : " ")}
           <br />
-        </>
+        </ React.Fragment>
       )
       )}
     </PrimaryTitle>

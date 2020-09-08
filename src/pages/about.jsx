@@ -1,11 +1,27 @@
 import { Tag } from "../components/styled-components/Tag";
 import { Line, PropName, Method, CodeEditor, Dots, Scope, Prop, String } from "../components/styled-components/CodeEditor";
 import { renderDots, zeroPad } from "../utils/functions";
+import { motion } from "framer-motion";
+import { useTheme } from "emotion-theming";
 
 export default function AboutPage({aboutInfos}) {
   const {name, birthday, email, workExperience, educations, skills} = aboutInfos
+  const theme = useTheme();
+  const pageTransition = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+    },
+    exit: {
+      background: theme.colors.white,
+      filter: `invert()`,
+      opacity: 0,
+    },
+  };
   return (
-    <div className="px-2">
+    <motion.div className="px-2" variants={pageTransition} initial="initial" animate="animate" exit="exit">
       <Tag>{"<body>"}</Tag>
       <Tag className="pl-3">{"<code>"}</Tag>
       <CodeEditor className="text-sm sm:text-base md:text-lg">
@@ -111,7 +127,7 @@ export default function AboutPage({aboutInfos}) {
       
       <Tag className="pl-3">{"</code>"}</Tag>
       <Tag>{"</body>"}</Tag>
-    </div>
+    </motion.div>
   )
 }
 

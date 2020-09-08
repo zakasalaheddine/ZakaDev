@@ -1,6 +1,7 @@
 import NavbarItem from "./NavbarItem";
 import { useRouter } from 'next/router'
 import Logo from "./Logo";
+import Link from "next/link";
 
 const Menu = [
   { text: "Home />", path: "/" },
@@ -13,7 +14,11 @@ export default function Navbar() {
   return (
     <header className="container mx-auto flex flex-col justify-center lg:justify-between lg:flex-row py-2">
       <div className="self-center">
-        <Logo />
+        <Link href="/">
+          <a>
+            <Logo />
+          </a>
+        </Link>
       </div>
       <nav className="flex self-center pt-5 md:pt-2">
         {

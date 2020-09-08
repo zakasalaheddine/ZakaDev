@@ -8,7 +8,7 @@ export const PageTransition = {
     opacity: 1,
     transition: {
       staggerChildren: 0.3,
-      delayChildren: 0.3,
+      delayChildren: 0.1,
     },
   },
   exit: {

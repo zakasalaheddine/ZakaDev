@@ -6,7 +6,7 @@ import { PageTransition } from "./MotionAnimations";
 export default function LoadingPage() {
   return (
     <motion.div variants={PageTransition} initial="initial" animate="animate" exit="exit" className="h-screen">
-      <Logo className="w-8/12 mx-auto" />
+      <img src="/assets/loading.svg" className="h-full mx-auto" />
     </motion.div>
   )
 }

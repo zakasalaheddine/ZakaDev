@@ -26,8 +26,8 @@ export default function Home({ homeInfo }) {
       />
       <motion.div className="px-2" variants={PageTransition} initial="initial" animate="animate" exit="exit">
         <Tag>{"<body>"}</Tag>
-        <div className="flex flex-wrap h-full pt-5 justify-center align-center">
-          <div className="self-center w-full lg:w-7/12 ml-10 mt-4">
+        <div className="flex flex-wrap md:flex-no-wrap h-full pt-5 justify-center align-center">
+          <div className="self-center w-full md:w-7/12 ml-10 mt-4">
             <Title
               titles={Titles}
               primaryIndex={1}
@@ -49,7 +49,7 @@ export default function Home({ homeInfo }) {
               </StyledButton>
             </a>
           </div>
-          <div className=" lg:flex">
+          <div className="w-full md:w-5/12">
             <img src="/assets/illustration.png" alt="" />
           </div>
         </div>
